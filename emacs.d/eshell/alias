@@ -1,0 +1,11 @@
+alias l lsls $*
+alias sl .. $*
+alias du du -h $*
+alias ...... cd ../../../../..
+alias ..... cd ../../../..
+alias .... cd ../../..
+alias ... cd ../..
+alias .. cd ..
+alias rm rm -I $*
+alias la ls -a $*
+alias ll ls -l $*
