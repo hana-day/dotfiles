@@ -5,11 +5,10 @@
              '("melpa" . "http://melpa.milkbox.net/packages/"))
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/"))
-(package-initialize)
 
 (defvar my-packages '(clojure-mode
                       cider
-		      paredit
+                      paredit
                       slime
                       auto-complete
                       zenburn-theme
@@ -20,7 +19,10 @@
                       flymake-ruby
                       smex
                       yaml-mode
-                      multi-term)) 
+                      multi-term
+                      yasnippet))
+
+(package-initialize)
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))

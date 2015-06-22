@@ -92,8 +92,3 @@
 (define-key yas-minor-mode-map (kbd "C-x i n") 'yas-new-snippet)
 (define-key yas-minor-mode-map (kbd "C-x i v") 'yas-visit-snippet-file)
 (custom-set-variables '(yas-trigger-key "TAB"))
-
-(require 'ac-math) 
-(add-to-list 'ac-modes 'latex-mode)
-
-
