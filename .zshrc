@@ -54,7 +54,7 @@ export TERM='xterm-256color'
 
 [ -f ~/.zshrc.private ] && source ~/.zshrc.private
 [ -f ~/.zshrc.alias ] && source ~/.zshrc.alias
-
+[ -f ~/.zshrc.alias.private ] && source ~/.zshrc.alias.private
 
 ## create emacs env file
 perl -wle \
