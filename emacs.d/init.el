@@ -20,7 +20,8 @@
                       smex
                       yaml-mode
                       multi-term
-                      yasnippet))
+                      yasnippet
+                      go-mode))
 
 (package-initialize)
 
