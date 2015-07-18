@@ -31,7 +31,7 @@
 
 
 ;; web-mode
-(add-to-list 'auto-mode-alist '("\\.\\(html\\|erb\\)$" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.\\(html\\|erb\\|css\\)$" . web-mode))
 
 ;; js2-mode
 (autoload 'js2-mode "js2-mode" nil t)
