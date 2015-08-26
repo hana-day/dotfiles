@@ -14,11 +14,10 @@ install-tmux:
 	ln -s `pwd`/tmux.conf ~/.tmux.conf
 
 install-emacs:
-	rm -rf ~/.emacs.d/init.el ~/.emacs.d/elisp ~/.emacs.d/elpa \
+	rm -rf ~/.emacs.d/init.el ~/.emacs.d/elisp \
 		~/.emacs.d/eshell ~/.emacs.d/settings ~/.emacs.d/snippets
 	ln -s `pwd`/emacs.d/init.el  ~/.emacs.d/init.el
 	ln -s `pwd`/emacs.d/elisp    ~/.emacs.d/elisp
-	ln -s `pwd`/emacs.d/elpa     ~/.emacs.d/elpa
 	ln -s `pwd`/emacs.d/eshell   ~/.emacs.d/eshell
 	ln -s `pwd`/emacs.d/settings ~/.emacs.d/settings
 	ln -s `pwd`/emacs.d/snippets ~/.emacs.d/snippets

@@ -21,7 +21,8 @@
                       yaml-mode
                       multi-term
                       yasnippet
-                      go-mode))
+                      go-mode
+                      ensime))
 
 (package-initialize)
 
