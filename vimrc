@@ -1,35 +1,10 @@
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'gmarik/Vundle.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'scrooloose/nerdtree'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'guns/vim-clojure-static'
-Plugin 'tpope/vim-fireplace'
-Plugin 'vim-scripts/paredit.vim'
-Plugin 'mattn/emmet-vim'
-
-call vundle#end()
-filetype plugin indent on
-
-
-"----------------------------------------------
-" Fireplace(Plugin)
-"----------------------------------------------
-
-" Mappings
-" --------
-autocmd FileType clojure nnoremap cpe :Require!<Enter>
-
 
 "----------------------------------------------
 " General
 "----------------------------------------------
-colorscheme jellybeans
+colorscheme desert
 
 source $VIMRUNTIME/macros/matchit.vim
 
@@ -38,9 +13,9 @@ else
     syntax on
 endif
 
-
+"----------------------------------------------
 " Options
-" -------
+"----------------------------------------------
 set nocompatible
 set t_Co=256
 set number
