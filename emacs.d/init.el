@@ -6,10 +6,7 @@
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/"))
 
-(defvar my-packages '(clojure-mode
-                      cider
-                      paredit
-                      slime
+(defvar my-packages '(paredit
                       auto-complete
                       zenburn-theme
                       magit
@@ -22,7 +19,7 @@
                       multi-term
                       yasnippet
                       go-mode
-                      ensime))
+                      markdown-mode))
 
 (package-initialize)
 
@@ -110,10 +107,13 @@
 
 
 ;; use PATH in zsh
-(load-file (concat user-emacs-directory "shellenv.el"))
-(dolist (path (reverse (split-string (getenv "PATH") ":")))
-  (add-to-list 'exec-path path))
-(put 'upcase-region 'disabled nil)
+(let ((shellenv-file (concat user-emacs-directory "shellenv.el")))
+  (when (file-exists-p shellenv-file)
+    (load-file shellenv-file)
+    (dolist (path (reverse (split-string (getenv "PATH") ":")))
+      (add-to-list 'exec-path path))
+    (put 'upcase-region 'disabled nil)))
+
 
 ;; my subsettings!
 (mapc 'load (directory-files (concat user-emacs-directory "settings")
