@@ -119,3 +119,8 @@
 (mapc 'load (directory-files (concat user-emacs-directory "settings")
                              t "^[^#].*el$"))
 
+;; load environment-specific settings
+(let ((init-local-file (concat user-emacs-directory "init-local.el")))
+  (when (file-exists-p init-local-file)
+    (load-file init-local-file)))
+

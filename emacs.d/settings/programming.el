@@ -96,3 +96,7 @@
 ;;; multi-term-mode
 (add-hook 'term-mode-hook (lambda()
                             (setq yas-dont-activate t)))
+
+;;; go-mode
+(setenv "GOPATH" "~/ws/go")
+
