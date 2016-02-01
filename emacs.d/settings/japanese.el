@@ -8,7 +8,6 @@
               (setq default-buffer-file-coding-system 'utf-8))))
 
 ;; japanese input method
-(load-file "~/.emacs.d/elisp/mozc.elc")
 (set-language-environment "Japanese")
 (setq default-input-method "japanese-mozc")
 

@@ -30,6 +30,7 @@ alias ......='cd ../../../../..'
 alias du='du -h'
 alias tmux='tmux -2'
 
+. ~/.bashrc.local
 
 ## Create a $PATH file for eshell
 perl -wle \
@@ -37,4 +38,3 @@ perl -wle \
      PATH > ~/.emacs.d/shellenv.el
 
 
-. ~/.bashrc.local

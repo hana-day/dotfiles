@@ -35,6 +35,10 @@
 ;; font setting
 (add-to-list 'default-frame-alist '(font . "Ricty-12"))
 
+
+(setq command-line-default-directory "~")
+
+
 ;; better default
 (setq ido-everywhere t)
 (setq ido-enable-flex-matching t)
