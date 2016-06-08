@@ -32,6 +32,8 @@
 
 ;; web-mode
 (add-to-list 'auto-mode-alist '("\\.\\(html\\|erb\\|css\\)$" . web-mode))
+(add-hook 'web-mode-hook '(lambda ()
+                            (setq web-mode-markup-indent-offset 2)))
 
 ;; js2-mode
 (autoload 'js2-mode "js2-mode" nil t)
@@ -87,11 +89,34 @@
 (require 'yasnippet)
 (add-hook 'latex-mode-hook 'yas-minor-mode)
 (yas-global-mode 1)
-(setq yas-snippet-dirs '("~/.emacs.d/snippets"))
-(define-key yas-minor-mode-map (kbd "C-x i i") 'yas-insert-snippet)
-(define-key yas-minor-mode-map (kbd "C-x i n") 'yas-new-snippet)
-(define-key yas-minor-mode-map (kbd "C-x i v") 'yas-visit-snippet-file)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(safe-local-variable-values
+   (quote
+    ((c-file-offsets
+      (innamespace . 0)
+      (substatement-open . 0)
+      (c . c-lineup-dont-change)
+      (inextern-lang . 0)
+      (comment-intro . c-lineup-dont-change)
+      (arglist-cont-nonempty . c-lineup-arglist)
+      (block-close . 0)
+      (statement-case-intro . ++)
+      (brace-list-intro . ++)
+      (cpp-define-intro . +))
+     (c-auto-align-backslashes))))
+ '(yas-trigger-key "TAB"))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
 (custom-set-variables '(yas-trigger-key "TAB"))
+
 
 ;;; multi-term-mode
 (add-hook 'term-mode-hook (lambda()
