@@ -1,5 +1,15 @@
 (require 'cl)
 
+
+(setq settings-dir
+      (expand-file-name "settings/" user-emacs-directory))
+
+(add-to-list 'load-path settings-dir)
+
+;; Keep emacs Custom-settings in separate file
+(setq custom-file (concat settings-dir "custom.el"))
+(load custom-file)
+
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
@@ -83,18 +93,9 @@
       backup-directory-alist `(("." . ,(concat user-emacs-directory
                                                "backups"))))
 
-
-;; browser setting
-(setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "google-chrome")
-
-
-;; tetris
-(setq tetris-score-file "~/.emacs.d/tetris-scores")
-
 ;; cua mode
 (cua-mode t)
-(setq cua-enable-cua-keys nil)                               
+(setq cua-enable-cua-keys nil)
 
 
 ;; autocomplete
@@ -111,6 +112,11 @@
 ;; ediff
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
 (setq ediff-split-window-function 'split-window-horizontally)
+
+
+;; browser setting
+(setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "google-chrome")
 
 
 ;; use PATH in zsh
@@ -130,32 +136,3 @@
 (let ((init-local-file (concat user-emacs-directory "init-local.el")))
   (when (file-exists-p init-local-file)
     (load-file init-local-file)))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (smartparens zenburn-theme yasnippet yaml-mode web-mode thrift smex scss-mode php-mode paredit multi-term markdown-mode magit less-css-mode js2-mode go-mode flymake-ruby dockerfile-mode cmake-mode auto-complete)))
- '(safe-local-variable-values
-   (quote
-    ((c-file-offsets
-      (innamespace . 0)
-      (substatement-open . 0)
-      (c . c-lineup-dont-change)
-      (inextern-lang . 0)
-      (comment-intro . c-lineup-dont-change)
-      (arglist-cont-nonempty . c-lineup-arglist)
-      (block-close . 0)
-      (statement-case-intro . ++)
-      (brace-list-intro . ++)
-      (cpp-define-intro . +))
-     (c-auto-align-backslashes))))
- '(yas-trigger-key "TAB"))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
