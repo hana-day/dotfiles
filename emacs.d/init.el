@@ -19,7 +19,8 @@
                       multi-term
                       yasnippet
                       go-mode
-                      markdown-mode))
+                      markdown-mode
+                      editorconfig))
 
 (package-initialize)
 

@@ -113,3 +113,7 @@
 
 ;;; go-mode
 (setenv "GOPATH" "~/ws/go")
+
+;;; editorconfig
+(require 'editorconfig)
+(editorconfig-mode 1)
