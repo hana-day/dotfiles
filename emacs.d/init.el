@@ -2,9 +2,9 @@
 
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/"))
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/"))
+             '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 
 (defvar my-packages '(paredit
                       auto-complete
@@ -20,13 +20,15 @@
                       yasnippet
                       go-mode
                       markdown-mode
-                      editorconfig))
+                      editorconfig
+                      dockerfile-mode
+                      smartparens))
 
 (package-initialize)
 
-(dolist (p my-packages)
-  (when (not (package-installed-p p))
-    (package-install p)))
+
+(unless (file-exists-p "~/.emacs.d/elpa/archives/melpa")
+  (package-refresh-contents))
 
 
 ;; color theme
@@ -128,3 +130,32 @@
 (let ((init-local-file (concat user-emacs-directory "init-local.el")))
   (when (file-exists-p init-local-file)
     (load-file init-local-file)))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (smartparens zenburn-theme yasnippet yaml-mode web-mode thrift smex scss-mode php-mode paredit multi-term markdown-mode magit less-css-mode js2-mode go-mode flymake-ruby dockerfile-mode cmake-mode auto-complete)))
+ '(safe-local-variable-values
+   (quote
+    ((c-file-offsets
+      (innamespace . 0)
+      (substatement-open . 0)
+      (c . c-lineup-dont-change)
+      (inextern-lang . 0)
+      (comment-intro . c-lineup-dont-change)
+      (arglist-cont-nonempty . c-lineup-arglist)
+      (block-close . 0)
+      (statement-case-intro . ++)
+      (brace-list-intro . ++)
+      (cpp-define-intro . +))
+     (c-auto-align-backslashes))))
+ '(yas-trigger-key "TAB"))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
