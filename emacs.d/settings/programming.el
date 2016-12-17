@@ -12,18 +12,6 @@
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
-;;; racket
-(setq geiser-active-implementations '(racket))
-(setq geiser-racket-binary "/usr/bin/racket")
-;; scheme setting
-(setq scheme-program-name "mit-scheme")
-(require 'cmuscheme)
-(defun scheme-other-window ()
-  "Run scheme on other window"
-  (interactive)
-  (switch-to-buffer-other-window
-   (get-buffer-create "*scheme*"))
-  (run-scheme scheme-program-name))
 
 ;; slime
 (setq inferior-lisp-program "sbcl")
@@ -125,4 +113,3 @@
 
 ;;; go-mode
 (setenv "GOPATH" "~/ws/go")
-
