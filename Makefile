@@ -1,4 +1,4 @@
-install: install-vim install-bash install-tmux install-emacs install-fonts
+install: install-vim install-bash install-tmux install-emacs
 
 install-vim:
 	rm -rf ~/.vimrc
@@ -20,7 +20,3 @@ install-emacs:
 	ln -s `pwd`/emacs.d/eshell   ~/.emacs.d/eshell
 	ln -s `pwd`/emacs.d/settings ~/.emacs.d/settings
 	ln -s `pwd`/emacs.d/snippets ~/.emacs.d/snippets
-
-install-fonts:
-	rm -rf ~/.fonts
-	ln -s `pwd`/fonts ~/.fonts
