@@ -127,4 +127,3 @@
 (let ((init-local-file (concat user-emacs-directory "init-local.el")))
   (when (file-exists-p init-local-file)
     (load-file init-local-file)))
-
