@@ -32,7 +32,8 @@
                       markdown-mode
                       editorconfig
                       dockerfile-mode
-                      smartparens))
+                      smartparens
+                      cython-mode))
 
 (package-initialize)
 
