@@ -16,7 +16,7 @@
 (global-set-key (kbd "C-c g") 'magit-status)
 
 ;; cua
-(define-key cua-global-keymap (kbd "C-x C-<space>") 'cua-set-rectangle-mark)
+(define-key cua-global-keymap (kbd "C-x <space>") 'cua-set-rectangle-mark)
 (define-key cua-global-keymap (kbd "C-@") 'cua-set-mark)
 
 (global-set-key (kbd "M-k") 'copy-line)
