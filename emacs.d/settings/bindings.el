@@ -15,6 +15,8 @@
 
 (global-set-key (kbd "C-c g") 'magit-status)
 
+(global-set-key (kbd "M-*") 'pop-tag-mark)
+
 ;; cua
 (define-key cua-global-keymap (kbd "C-x SPC") 'cua-set-rectangle-mark)
 (define-key cua-global-keymap (kbd "C-@") 'cua-set-mark)
