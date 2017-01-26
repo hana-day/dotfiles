@@ -21,9 +21,6 @@
                       zenburn-theme
                       magit
                       web-mode
-                      php-mode
-                      js2-mode
-                      flymake-ruby
                       smex
                       yaml-mode
                       multi-term
