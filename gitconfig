@@ -1,0 +1,9 @@
+[user]
+	name = Yusuke Hanada
+	email = hyusuk9872@gmail.com
+[core]
+	editor = vim
+[merge]
+	tool = vimdiff
+[color]
+	ui = auto

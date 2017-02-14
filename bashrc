@@ -9,8 +9,6 @@ function prompt {
 prompt
 
 
-export EDITOR=emacs
-export GIT_EDITOR=emacs
 export LANG=ja_JP.UTF-8
 export KCODE=u
 export TERM='xterm-256color'
@@ -19,6 +17,7 @@ export CLICOLOR=1
 
 
 alias ls='ls --color=auto'
+alias l='ls'
 alias ll='ls -l'
 alias la='ls -a'
 alias rm='rm -I'

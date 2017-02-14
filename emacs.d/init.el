@@ -39,12 +39,12 @@
   (package-refresh-contents))
 
 
+(dolist (package my-packages)
+  (unless (package-installed-p package)
+    (package-install package)))
+
 ;; color theme
 (load-theme 'zenburn t)
-
-
-;; font setting
-(add-to-list 'default-frame-alist '(font . "Ricty-12"))
 
 
 (setq command-line-default-directory "~")
