@@ -32,6 +32,4 @@ alias tmux='tmux -2'
 . ~/.bashrc.local
 
 ## Create a $PATH file for eshell
-perl -wle \
-     'do { print qq/(setenv "$_" "$ENV{$_}")/ if exists $ENV{$_} } for @ARGV' \
-     PATH > ~/.emacs.d/shellenv.el
+echo "(setenv \"PATH\" \"$PATH\")" > ~/.emacs.d/shellenv.el

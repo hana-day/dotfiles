@@ -8,7 +8,7 @@
 (global-set-key (kbd "C-M-r") 'isearch-backward)
 (global-set-key (kbd "M-%") 'replace-regexp)
 
-(global-set-key (kbd "C-x t") 'eshell)
+(global-set-key (kbd "C-x t") 'shell)
 (global-set-key (kbd "C-x C-t") 'multi-term)
 
 (global-set-key (kbd "M-x") 'smex)
