@@ -14,6 +14,8 @@ export KCODE=u
 export TERM='xterm-256color'
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 export CLICOLOR=1
+export HISTSIZE=10000
+export HISTFILESIZE=2000000
 
 
 alias ls='ls --color=auto'
