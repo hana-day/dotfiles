@@ -7,10 +7,12 @@
                            (shell-command-to-string "uname -r")))
   (setq interprogram-paste-function
         (lambda ()
-          (shell-command-to-string "win32yank.exe -o")))
+          (replace-regexp-in-string
+           "" "" (shell-command-to-string "win32yank.exe -o"))))
   (setq interprogram-cut-function
         (lambda (text &optional rest)
           (let* ((process-connection-type nil)
-                 (proc (start-process "win32yank-cut" "*Messages*" "win32yank.exe" "-i")))
+                 (proc (start-process
+                        "win32yank-cut" "*Messages*" "win32yank.exe" "-i")))
             (process-send-string proc text)
             (process-send-eof proc)))))
