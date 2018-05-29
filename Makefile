@@ -1,4 +1,4 @@
-install: install-vim install-bash install-tmux install-emacs install-gitconfig
+install: install-vim install-bash install-tmux install-emacs install-gitconfig install-gitignore
 
 install-vim:
 	rm -rf ~/.vimrc
@@ -24,3 +24,7 @@ install-emacs:
 install-gitconfig:
 	rm -rf ~/.gitconfig
 	ln -s `pwd`/gitconfig ~/.gitconfig
+
+install-gitignore:
+	rm -rf ~/.gitignore_global
+	ln -s `pwd`/gitignore_global ~/.gitignore_global
