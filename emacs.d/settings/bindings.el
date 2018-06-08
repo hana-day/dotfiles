@@ -29,3 +29,4 @@
                   (line-beginning-position (+ 1 arg)))
   (message "%d line%s copied" arg (if (= 1 arg) "" "s")))
 
+(global-set-key (kbd "C-x C-m C-m") 'compile)

@@ -8,7 +8,7 @@
   (setq interprogram-paste-function
         (lambda ()
           (replace-regexp-in-string
-           "" "" (shell-command-to-string "win32yank.exe -o"))))
+           "\r" "" (shell-command-to-string "win32yank.exe -o"))))
   (setq interprogram-cut-function
         (lambda (text &optional rest)
           (let* ((process-connection-type nil)

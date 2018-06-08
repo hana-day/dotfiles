@@ -7,5 +7,6 @@
           java-mode
           ruby-mode
           web-mode-hook
-          latex-mode-hook)
+          latex-mode-hook
+          go-mode-hook)
   (add-hook it 'turn-on-smartparens-mode))
