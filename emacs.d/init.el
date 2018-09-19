@@ -19,9 +19,6 @@
 
 (package-initialize)
 
-;; Color theme
-(load-theme 'zenburn t)
-
 ;; Load newer .el or .elc
 (setq load-prefer-newer t)
 
@@ -92,11 +89,6 @@
 (global-set-key (kbd "M-%") 'replace-regexp)
 
 (global-set-key (kbd "C-x t") 'shell)
-(global-set-key (kbd "C-x C-t") 'multi-term)
-
-(global-set-key (kbd "M-x") 'smex)
-
-(global-set-key (kbd "C-c g") 'magit-status)
 
 (global-set-key (kbd "M-*") 'pop-tag-mark)
 
@@ -116,6 +108,11 @@
 
 (require 'use-package)
 (setq use-package-verbose t)
+
+(use-package zenburn-theme
+  :ensure t
+  :config
+  (load-theme 'zenburn t))
 
 (use-package ido
   :config
@@ -145,6 +142,7 @@
 
 (use-package smex
   :ensure t
+  :bind (("M-x" . smex))
   :config
   (smex-initialize))
 
@@ -199,6 +197,7 @@
 
 (use-package multi-term
   :ensure t
+  :bind (("C-x C-t" . multi-term))
   :config
   (add-hook 'term-mode-hook (lambda()
                               (setq yas-dont-activate t))))
@@ -252,6 +251,10 @@
   (yas-global-mode 1)
   (custom-set-variables '(yas-trigger-key "TAB")))
 
+(use-package magit
+  :ensure t
+  :bind (("C-c g" . magit-status)))
+
 
 ;; Japanese input settings
 (setenv "LANG" "ja_JP.UTF-8")
@@ -274,10 +277,6 @@
       (add-to-list 'exec-path path))
     (put 'upcase-region 'disabled nil)))
 
-
-;; ;; my subsettings!
-;; (mapc 'load (directory-files (concat user-emacs-directory "settings")
-;;                              t "^[^#].*el$"))
 
 ;; load environment-specific settings
 (let ((init-local-file (concat user-emacs-directory "init-local.el")))
