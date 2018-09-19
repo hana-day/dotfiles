@@ -1,1 +1,0 @@
-(setenv "GOPATH" "~/ws/go")

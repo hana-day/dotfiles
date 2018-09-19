@@ -15,10 +15,9 @@ install-tmux:
 	ln -s `pwd`/tmux.conf ~/.tmux.conf
 
 install-emacs:
-	rm -rf ~/.emacs.d/init.el ~/.emacs.d/eshell ~/.emacs.d/settings ~/.emacs.d/snippets
+	rm -rf ~/.emacs.d/init.el ~/.emacs.d/eshell ~/.emacs.d/snippets
 	ln -s `pwd`/emacs.d/init.el  ~/.emacs.d/init.el
 	ln -s `pwd`/emacs.d/eshell   ~/.emacs.d/eshell
-	ln -s `pwd`/emacs.d/settings ~/.emacs.d/settings
 	ln -s `pwd`/emacs.d/snippets ~/.emacs.d/snippets
 
 install-gitconfig:
