@@ -19,6 +19,13 @@
 
 (package-initialize)
 
+
+;; Create the savefile directory
+(defconst hyusuk-savefile-dir (expand-file-name "savefile" user-emacs-directory))
+(unless (file-exists-p hyusuk-savefile-dir)
+  (make-directory hyusuk-savefile-dir))
+
+
 ;; Load newer .el or .elc
 (setq load-prefer-newer t)
 
@@ -127,7 +134,7 @@
 
 (use-package saveplace
   :config
-  (setq save-place-file (concat user-emacs-directory "places"))
+  (setq save-place-file (expand-file-name "saveplace" hyusuk-savefile-dir))
   (setq-default save-place t))
 
 (use-package etags
