@@ -3,6 +3,7 @@
 	email = hyusuk9872@gmail.com
 [core]
 	editor = vim
+        excludesfile = ~/.gitignore_global
 [merge]
 	tool = vimdiff
 [color]
