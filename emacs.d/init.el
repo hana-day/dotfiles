@@ -262,6 +262,13 @@
   :ensure t
   :bind (("C-c g" . magit-status)))
 
+(use-package cua-base
+  :init (cua-mode 1)
+  :bind ("C-x SPC" . cua-set-rectangle-mark)
+  :config
+  (setq cua-enable-cua-keys nil)
+  (setq cua-toggle-set-mark nil))
+
 
 ;; Japanese input settings
 (setenv "LANG" "ja_JP.UTF-8")
