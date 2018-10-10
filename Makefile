@@ -1,4 +1,4 @@
-install: install-vim install-bash install-tmux install-emacs install-gitconfig install-gitignore
+install: install-vim install-bash install-tmux install-emacs install-gitconfig install-gitignore install-ctags
 
 install-vim:
 	rm -rf ~/.vimrc
@@ -27,3 +27,7 @@ install-gitconfig:
 install-gitignore:
 	rm -rf ~/.gitignore_global
 	ln -s `pwd`/gitignore_global ~/.gitignore_global
+
+install-ctags:
+	rm -rf ~/.ctags
+	ln -s `pwd`/.ctags ~/.ctags

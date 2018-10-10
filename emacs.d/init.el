@@ -272,6 +272,11 @@
   (setq cua-enable-cua-keys nil)
   (setq cua-toggle-set-mark nil))
 
+(use-package yaml-mode
+  :ensure t
+  :config
+  (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode)))
+
 
 ;; Japanese input settings
 (setenv "LANG" "ja_JP.UTF-8")
