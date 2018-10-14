@@ -278,6 +278,24 @@
   (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode)))
 
 
+(use-package shell
+  :config
+  (defun my-current-directory (text)
+    (when (string-match "\\[.+@[^ ]+ \\(.+\\)\\] " text)
+      (setq cur-dir (string-remove-suffix
+                     ;; The end string of prompt coloring
+                     "[0m"
+                     (string-remove-prefix
+                     ;; The start string of prompt coloring
+                      "[1;36m"
+                      (substring text (match-beginning 1) (match-end 1)))))
+      (cd cur-dir)))
+  (defun my-shell-setup ()
+    "Track current directory"
+    (add-hook 'comint-output-filter-functions 'my-current-directory nil t))
+  (setq shell-mode-hook 'my-shell-setup))
+
+
 ;; Japanese input settings
 (setenv "LANG" "ja_JP.UTF-8")
 (add-hook 'set-language-environment-hook 
