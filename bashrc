@@ -1,13 +1,39 @@
-function prompt {
-    local B_PURPLE='\[\033[1;35m\]'
-    local B_YELLOW='\[\033[1;33m\]'
-    local B_GREEN='\[\033[1;32m\]'
-    local DEFAULT='\[\033[0;37m\]'
+PROMPT_COMMAND=smile_prompt
 
-    export PS1="${B_PURPLE}\u ${DEFAULT}at ${B_YELLOW}\h ${DEFAULT}in ${B_GREEN}\w${DEFAULT} "
+RED='\[\e[0;31m\]'
+GREEN='\[\e[0;32m\]'
+BYELLOW='\[\e[1;33m\]'
+BMAGENTA='\[\e[1;35m\]'
+BCYAN='\[\e[1;36m\]'
+BWHITE='\[\e[1;37m\]'
+
+function smile_prompt
+{
+    if [ "$?" -eq "0" ]
+    then
+        #smiley
+        SC="${GREEN}:)"
+    else
+        #frowney
+        SC="${RED}:("
+    fi
+    if [ $UID -eq 0 ]
+    then
+        #root user color
+        UC="${RED}"
+    else
+        #normal user color
+        UC="${BMAGENTA}"
+    fi
+    #hostname color
+    HC="${BYELLOW}"
+    #regular color
+    RC="${BWHITE}"
+    #default color
+    DF='\[\e[0m\]'
+    DC="${BCYAN}"
+    PS1="[${UC}\u${RC}@${HC}\h ${DC}\w${DF}] ${SC}${DF} "
 }
-prompt
-
 
 export LANG=ja_JP.UTF-8
 export KCODE=u
