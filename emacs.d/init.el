@@ -307,6 +307,15 @@
 (setq default-input-method "japanese-mozc")
 
 
+;; use PATH in zsh
+(let ((shellenv-file (concat user-emacs-directory "shellenv.el")))
+  (when (file-exists-p shellenv-file)
+    (load-file shellenv-file)
+    (dolist (path (reverse (split-string (getenv "PATH") ":")))
+      (add-to-list 'exec-path path))
+    (put 'upcase-region 'disabled nil)))
+
+
 ;; load environment-specific settings
 (let ((init-local-file (concat user-emacs-directory "init-local.el")))
   (when (file-exists-p init-local-file)
