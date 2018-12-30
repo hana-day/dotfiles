@@ -167,8 +167,6 @@
   :config
   (add-hook 'c-mode-common-hook
             (lambda ()
-              (c-set-style "bsd")
-              (setq c-basic-offset 4)
               ;; offset of multiline
               (c-set-offset 'statement-cont 'c-lineup-math)
               (setq show-trailing-whitespace t))))
@@ -307,15 +305,6 @@
               (setq default-buffer-file-coding-system 'utf-8))))
 (set-language-environment "Japanese")
 (setq default-input-method "japanese-mozc")
-
-
-;; use PATH in zsh
-(let ((shellenv-file (concat user-emacs-directory "shellenv.el")))
-  (when (file-exists-p shellenv-file)
-    (load-file shellenv-file)
-    (dolist (path (reverse (split-string (getenv "PATH") ":")))
-      (add-to-list 'exec-path path))
-    (put 'upcase-region 'disabled nil)))
 
 
 ;; load environment-specific settings
