@@ -1,4 +1,4 @@
-install: install-vim install-bash install-tmux install-emacs install-gitconfig install-gitignore install-ctags
+install: install-vim install-zsh install-tmux install-emacs install-gitconfig install-gitignore install-ctags
 
 install-vim:
 	rm -rf ~/.vimrc
@@ -6,9 +6,9 @@ install-vim:
 	mkdir -p ~/.vim/swap
 	mkdir -p ~/.vim/backup
 
-install-bash:
-	rm -rf ~/.bashrc
-	ln -sf `pwd`/bashrc ~/.bashrc
+install-zsh:
+	rm -rf ~/.zshrc
+	ln -sf `pwd`/zshrc ~/.zshrc
 
 install-tmux:
 	rm -rf ~/.tmux.conf
