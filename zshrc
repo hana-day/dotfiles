@@ -21,7 +21,25 @@ function smile_prompt {
     # default color
     DF="%f"
     DC="%F{cyan}"
-    PROMPT="[${UC}%n${RC}@${HC}%m ${DC}%~${DF}] ${SC}${DF} "
+    # git branch color
+    GC="%F{blue}"
+    
+    # Get git branch if in a git repository
+    local git_branch=""
+    if git rev-parse --git-dir > /dev/null 2>&1; then
+        git_branch=$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null)
+        if [[ -n $git_branch ]]; then
+            git_branch=" ${GC}(${git_branch})${DF}"
+        fi
+    fi
+    
+    # Get Python virtual environment name
+    local venv_prompt=""
+    if [[ -n $VIRTUAL_ENV ]]; then
+        venv_prompt="($(basename $VIRTUAL_ENV)) "
+    fi
+    
+    PROMPT="${venv_prompt}[${UC}%n${RC}@${HC}%m ${DC}%~${DF}]${git_branch} ${SC}${DF} "
 }
 
 # Call the smile_prompt function before each prompt
@@ -49,5 +67,6 @@ alias ......='cd ../../../../..'
 alias du='du -h'
 alias tmux='tmux -2'
 
-# Source additional configuration
-source ~/.zshrc.local
+. $HOME/.zshrc.local
+
+. ~/.local/bin/env
